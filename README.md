@@ -33,3 +33,11 @@ http://true-system.blogspot.com/2013/10/windows-1-windows-pe.html
 
 - https://habr.com/ru/articles/70806/
 
+### WMI Code Creator
+
+- https://habr.com/ru/articles/70806/
+- https://www.microsoft.com/en-us/download/details.aspx?id=8572
+
+tool allows you to generate VBScript, C#, and VB .NET code that uses WMI to complete a management tasks
+
+
