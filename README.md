@@ -54,3 +54,7 @@ Guest Additions drivers dumped to `%PE%\driver\%ARCH%\vbox`
 
 - https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/winpe-network-drivers-initializing-and-adding-drivers?view=windows-10
 
+## FAR
+
+- https://forum.farmanager.com/viewtopic.php?t=7626
+

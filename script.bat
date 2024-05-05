@@ -8,7 +8,6 @@ dism /Cleanup-Wim
 set   WIM=%PE%\%ARCH%\media\sources\boot.wim
 set MOUNT=C:\mount
 md %MOUNT%
-
 dism /Mount-Wim /WimFile:%WIM% /index:1 /MountDir:%MOUNT%
 
 set DRIVER=%PE%\driver
@@ -26,9 +25,11 @@ md %TOOL%
 
 xcopy /e /y %TOOL%   %MOUNT%\tool\
 xcopy /e /y %PE%\SDI %MOUNT%\SDI\
+xcopy /e /y %PE%\far %MOUNT%\far\
 
 dism /Unmount-Wim /MountDir:%MOUNT% /Commit
-rem /Discard
+rem dism /Unmount-Wim /MountDir:%MOUNT% /Discard
+dism /Cleanup-Wim
 
 set ISO=%PE%\iso
 md %ISO%
