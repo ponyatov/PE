@@ -40,4 +40,7 @@ http://true-system.blogspot.com/2013/10/windows-1-windows-pe.html
 
 tool allows you to generate VBScript, C#, and VB .NET code that uses WMI to complete a management tasks
 
+### MgmtClassGen.exe
+
+- https://learn.microsoft.com/en-us/dotnet/framework/tools/mgmtclassgen-exe
 
