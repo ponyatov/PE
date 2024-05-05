@@ -5,18 +5,16 @@
 
 github: https://github.com/ponyatov/PE
 
-## ADK
+## необходимые пакеты и компоненты
 
-пакет разработчика кастомных дистрибутивов
-
-### WinPE
-
-набор загрузочных образов Windows PE для всех архитектур
-
-### DISM
-#### Deployment Image Servicing and Management
-
-основной инструмент развертывания и обслуживания образов в [[Windows]] в командной строке
+- ADK
+    - пакет разработчика кастомных дистрибутивов
+  - WinPE
+    - набор загрузочных образов Windows PE для всех архитектур
+  - DISM: Deployment Image Servicing and Management
+    - основной инструмент развертывания и обслуживания образов [[Windows]] в командной строке
+- WMI: Windows Management Instrumentation
+    - технология, которая с помощью единого интерфейса позволяет управлять компонентами OS
 
 ## outsidethebox
 
