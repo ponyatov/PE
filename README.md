@@ -29,3 +29,7 @@ github: https://github.com/ponyatov/PE
 ### Работа с образами Windows. Часть 1. Собираем Windows PE.
 http://true-system.blogspot.com/2013/10/windows-1-windows-pe.html
 
+## WMI
+
+- https://habr.com/ru/articles/70806/
+
