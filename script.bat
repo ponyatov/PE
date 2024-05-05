@@ -30,3 +30,8 @@ xcopy /e /y %PE%\SDI %MOUNT%\SDI\
 dism /Unmount-Wim /MountDir:%MOUNT% /Commit
 rem /Discard
 
+set ISO=%PE%\iso
+md %ISO%
+
+oscdimg -n -b%PE%\%ARCH%\fwfiles\etfsboot.com %PE%\%ARCH%\media %ISO%\winPE_%ARCH%.iso
+
