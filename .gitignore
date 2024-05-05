@@ -2,5 +2,7 @@
 *.swp
 *.log
 x86/
+tool/
+SDI/
 !.gitignore
 

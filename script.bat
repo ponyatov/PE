@@ -20,4 +20,10 @@ rem D:\VBoxWindowsAdditions-amd64.exe /extract /D=%PE%\driver\amd64
 
 dism /Image:%MOUNT% /Add-Driver /Driver:%DRIVER% /recurse
 
+set TOOL=%PE%\tool
+md %TOOL%
+
+xcopy /e /y %TOOL%   %MOUNT%\tool\
+xcopy /e /y %PE%\SDI %MOUNT%\SDI\
+
 
