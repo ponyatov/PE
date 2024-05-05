@@ -1,0 +1,8 @@
+rc
+.git/**
+bin/**
+fw/**
+ref/**
+tmp/**
+iso/**
+
