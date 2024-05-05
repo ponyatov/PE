@@ -8,6 +8,9 @@ dism /Cleanup-Wim
 set   WIM=%PE%\%ARCH%\media\sources\boot.wim
 set MOUNT=C:\mount
 md %MOUNT%
+
+dism /Mount-Wim /WimFile:%WIM% /index:1 /MountDir:%MOUNT%
+
 set DRIVER=%PE%\driver\%ARCH%
 md %DRIVER%
 
@@ -15,5 +18,6 @@ rem %PE%/driver/%ARCH%/vbox
 rem D:\VBoxWindowsAdditions-x86.exe   /extract /D=%PE%\driver\x86
 rem D:\VBoxWindowsAdditions-amd64.exe /extract /D=%PE%\driver\amd64
 
-dism /Mount-Wim /WimFile:%WIM% /index:1 /MountDir:%MOUNT%
+dism /Image:%MOUNT% /Add-Driver /Driver:%DRIVER% /recurse
+
 

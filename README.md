@@ -7,14 +7,18 @@ github: https://github.com/ponyatov/PE
 
 ## необходимые пакеты и компоненты
 
-- ADK
+- **ADK**
     - пакет разработчика кастомных дистрибутивов
-  - WinPE
+  - **WinPE**: Windows Preinstallation Environment
     - набор загрузочных образов Windows PE для всех архитектур
   - DISM: Deployment Image Servicing and Management
     - основной инструмент развертывания и обслуживания образов [[Windows]] в командной строке
 - WMI: Windows Management Instrumentation
     - технология, которая с помощью единого интерфейса позволяет управлять компонентами OS
+
+## WinPE.ru
+
+- https://www.winpe.ru/
 
 ## outsidethebox
 
@@ -43,4 +47,10 @@ tool allows you to generate VBScript, C#, and VB .NET code that uses WMI to comp
 ### MgmtClassGen.exe
 
 - https://learn.microsoft.com/en-us/dotnet/framework/tools/mgmtclassgen-exe
+
+## VirtualBox
+
+Guest Additions drivers dumped to `%PE%\driver\%ARCH%\vbox`
+
+- https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/winpe-network-drivers-initializing-and-adding-drivers?view=windows-10
 
