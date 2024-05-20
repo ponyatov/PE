@@ -6,6 +6,7 @@ create partition efi size=128
 format fs=fat32 quick label=efi
 create partition primary
 format fs=ntfs quick label=windows
+assign letter C
 detail disk
 list part
 exit
