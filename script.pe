@@ -1,0 +1,3 @@
+wpeinit
+diskpart /s \diskpart
+wpeutil shutdown
