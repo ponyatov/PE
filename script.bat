@@ -1,10 +1,11 @@
 rem Deployment and Imaging Tools Environment
 
-cd "..\Windows Preinstallation Environment"
-
 set PE=C:\PE
 set ARCH=amd64
 md %PE%
+
+cd "..\Windows Preinstallation Environment\%ARCH%"
+
 copype.cmd %ARCH% %PE%\%ARCH%\
 
 rem MOUNT
@@ -26,22 +27,20 @@ md %DRIVER%\vbox
 md %DRIVER%\vbox\%ARCH%
 rem D:\VBoxWindowsAdditions-%ARCH%.exe /extract /D=%PE%\driver\vbox
 
-Dism /Image:%MOUNT% /Add-Driver /Driver:%DRIVER%\vbox\%ARCH% /Recurse
+Dism /Image:%MOUNT% /Add-Driver /Driver:%DRIVER%\vbox\%ARCH% /Recurse /ForceUnsigned
+Dism /Image:%MOUNT% /Get-Drivers
 
 rem UMOUNT
 
 Dism /Unmount-Image /MountDir:%MOUNT% /commit
-Dism /Cleanup-Image
 dism /Cleanup-Wim
 
 rem BOOT
 
+set ISO=%PE%\iso
+md %ISO%
+MakeWinPEMedia /ISO %PE%\%ARCH% %ISO%\w10iot_%ARCH%.iso
 
-
-
-
-
-rem dism /Mount-Wim /WimFile:%WIM% /index:1 /MountDir:%MOUNT%
 
 
 
@@ -51,13 +50,6 @@ md %TOOL%
 xcopy /e /y %TOOL%   %MOUNT%\tool\
 xcopy /e /y %PE%\SDI %MOUNT%\SDI\
 xcopy /e /y %PE%\FAR %MOUNT%\FAR\
-
-dism /Unmount-Wim /MountDir:%MOUNT% /Commit
-rem dism /Unmount-Wim /MountDir:%MOUNT% /Discard
-dism /Cleanup-Wim
-
-set ISO=%PE%\iso
-md %ISO%
 
 oscdimg -n -b%PE%\%ARCH%\fwfiles\etfsboot.com %PE%\%ARCH%\media %ISO%\winPE_%ARCH%.iso
 
