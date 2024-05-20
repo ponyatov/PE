@@ -28,12 +28,20 @@ md %DRIVER%\vbox\%ARCH%
 rem D:\VBoxWindowsAdditions-%ARCH%.exe /extract /D=%PE%\driver\vbox
 
 Dism /Image:%MOUNT% /Add-Driver /Driver:%DRIVER%\vbox\%ARCH% /Recurse /ForceUnsigned
-Dism /Image:%MOUNT% /Get-Drivers
+rem Dism /Image:%MOUNT% /Get-Drivers
+
+rem TOOLS
+
+xcopy /e /y %PE%\FAR %MOUNT%\FAR\
+xcopy    /y %PE%\diskpart %MOUNT%\diskpart
+xcopy    /y %PE%\startnet.cmd %MOUNT%\Windows\system32\startnet.cmd
 
 rem UMOUNT
 
 Dism /Unmount-Image /MountDir:%MOUNT% /commit
+rem Dism /Unmount-Image /MountDir:%MOUNT% /discard
 dism /Cleanup-Wim
+rmdir %MOUNT%
 
 rem BOOT
 
@@ -49,7 +57,6 @@ md %TOOL%
 
 xcopy /e /y %TOOL%   %MOUNT%\tool\
 xcopy /e /y %PE%\SDI %MOUNT%\SDI\
-xcopy /e /y %PE%\FAR %MOUNT%\FAR\
 
 oscdimg -n -b%PE%\%ARCH%\fwfiles\etfsboot.com %PE%\%ARCH%\media %ISO%\winPE_%ARCH%.iso
 
