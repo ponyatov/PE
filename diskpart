@@ -1,2 +1,9 @@
+list disk
 select disk 0
 clean
+convert gpt
+create partition efi size=128
+create partition primary
+detail disk
+list part
+exit
