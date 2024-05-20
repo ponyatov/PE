@@ -1,7 +1,8 @@
-set PE=C:\PE
-set ARCH=x86
-md %PE%
 cd "..\Windows Preinstallation Environment"
+
+set PE=C:\PE
+set ARCH=amd64
+md %PE%
 copype.cmd %ARCH% %PE%\%ARCH%\
 
 dism /Cleanup-Wim

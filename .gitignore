@@ -2,8 +2,10 @@
 *.swp
 *.log
 x86/
+amd64/
 tool/
 SDI/
 iso/
+FAR/Profile/
 !.gitignore
 

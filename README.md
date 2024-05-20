@@ -1,5 +1,5 @@
 # PE
-## Windows PE scripts (10 IoT 2021)
+## Windows PE/ADK scripts (10 IoT 2021)
 
 (c) Dmitry Ponyatov <dponyatov@gmail.com> 2024 MIT
 

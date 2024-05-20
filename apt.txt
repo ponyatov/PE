@@ -1,0 +1,2 @@
+git make curl
+virtualbox-7.0
